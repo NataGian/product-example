@@ -1,6 +1,6 @@
 import React from "react";
-import {cn} from "@/lib/utils";
-import {Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator} from "@/components/ui/breadcrumb";
+import {cn} from "../../../lib/utils";
+import {Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator} from "../../ui/breadcrumb";
 
 interface AppLayoutProps {
     children: React.ReactNode;
