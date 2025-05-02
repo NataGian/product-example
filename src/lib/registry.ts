@@ -5,7 +5,12 @@ export class PageRegistry {
     pages: Map<string, PageDefinition> = new Map();
     routes: Map<string, string> = new Map();
 
-    registerPage(key: string, component: ComponentType<any>, route: string, options: PageOptions = {}) {
+    registerPage(
+        key: string,
+        component: ComponentType<unknown>,
+        route: string,
+        options: PageOptions = {}
+    ) {
         this.pages.set(key, {component, options});
         this.routes.set(route, key);
         return this;
