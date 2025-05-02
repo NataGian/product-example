@@ -1,5 +1,6 @@
-'use strict';
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.createRegistry = exports.PageRegistry = void 0;
 class PageRegistry {
     constructor() {
         this.pages = new Map();
@@ -21,8 +22,7 @@ class PageRegistry {
         return Array.from(this.routes.entries());
     }
 }
-const createRegistry = () => new PageRegistry();
-
 exports.PageRegistry = PageRegistry;
+const createRegistry = () => new PageRegistry();
 exports.createRegistry = createRegistry;
 //# sourceMappingURL=registry.js.map

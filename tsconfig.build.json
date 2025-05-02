@@ -1,0 +1,21 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "noEmit": false,
+    "importHelpers": true,
+    "preserveSymlinks": true,
+    "rootDir": "./src",
+    "outDir": "./dist/esm",
+    "module": "esnext"
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    ".next",
+    "pages",
+    "app"
+  ]
+}

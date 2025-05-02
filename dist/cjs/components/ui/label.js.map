@@ -1,1 +1,1 @@
-{"version":3,"file":"label.js","sources":["../../../../../src/components/ui/label.tsx"],"sourcesContent":[null],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;AAOA;AAAe;;AAcf;;"}
+{"version":3,"file":"label.js","sourceRoot":"","sources":["../../../../src/components/ui/label.tsx"],"names":[],"mappings":";AAAA,YAAY,CAAA;;AAuBH,sBAAK;;;AApBd,8EAAuD;AAEvD,uCAAgC;AAEhC,SAAS,KAAK,CAAC,EAGoC;QAHpC,EACb,SAAS,OAEwC,EAD9C,KAAK,sBAFK,aAGd,CADS;IAER,OAAO,CACL,uBAAC,cAAc,CAAC,IAAI,+BACR,OAAO,EACjB,SAAS,EAAE,IAAA,UAAE,EACX,qNAAqN,EACrN,SAAS,CACV,IACG,KAAK,EACT,CACH,CAAA;AACH,CAAC"}

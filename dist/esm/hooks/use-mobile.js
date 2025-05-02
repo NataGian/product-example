@@ -1,7 +1,6 @@
-import * as React from 'react';
-
+import * as React from "react";
 const MOBILE_BREAKPOINT = 768;
-const useIsMobile = () => {
+export const useIsMobile = () => {
     const [isMobile, setIsMobile] = React.useState(undefined);
     React.useEffect(() => {
         if (typeof window === 'undefined')
@@ -16,6 +15,4 @@ const useIsMobile = () => {
     }, []);
     return isMobile !== null && isMobile !== void 0 ? isMobile : false;
 };
-
-export { useIsMobile };
 //# sourceMappingURL=use-mobile.js.map

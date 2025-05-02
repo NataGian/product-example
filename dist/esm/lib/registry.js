@@ -1,4 +1,4 @@
-class PageRegistry {
+export class PageRegistry {
     constructor() {
         this.pages = new Map();
         this.routes = new Map();
@@ -19,7 +19,5 @@ class PageRegistry {
         return Array.from(this.routes.entries());
     }
 }
-const createRegistry = () => new PageRegistry();
-
-export { PageRegistry, createRegistry };
+export const createRegistry = () => new PageRegistry();
 //# sourceMappingURL=registry.js.map

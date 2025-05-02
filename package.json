@@ -24,7 +24,8 @@
   ],
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build:lib": "tsc -p tsconfig.build.json && tsc -p tsconfig.build.cjs.json",
+    "build": "npm run build:lib && next build",
     "start": "next start",
     "lint": "next lint",
     "prepublishOnly": "npm run build:package",

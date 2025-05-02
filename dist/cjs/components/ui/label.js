@@ -1,34 +1,13 @@
+"use strict";
 "use client";
-'use strict';
-
-var tslib_es6_js = require('C:\\Users\\NataliaGIANNOULI\\IdeaProjects\\product-example\\node_modules\\tslib\\tslib.es6.js');
-var jsxRuntime = require('react/jsx-runtime');
-var LabelPrimitive = require('@radix-ui/react-label');
-var utils = require('../../lib/utils.js');
-
-function _interopNamespaceDefault(e) {
-    var n = Object.create(null);
-    if (e) {
-        Object.keys(e).forEach(function (k) {
-            if (k !== 'default') {
-                var d = Object.getOwnPropertyDescriptor(e, k);
-                Object.defineProperty(n, k, d.get ? d : {
-                    enumerable: true,
-                    get: function () { return e[k]; }
-                });
-            }
-        });
-    }
-    n.default = e;
-    return Object.freeze(n);
-}
-
-var LabelPrimitive__namespace = /*#__PURE__*/_interopNamespaceDefault(LabelPrimitive);
-
-function Label(_a) {
-    var { className } = _a, props = tslib_es6_js.__rest(_a, ["className"]);
-    return (jsxRuntime.jsx(LabelPrimitive__namespace.Root, Object.assign({ "data-slot": "label", className: utils.cn("flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50", className) }, props)));
-}
-
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.Label = Label;
+const tslib_1 = require("tslib");
+const jsx_runtime_1 = require("react/jsx-runtime");
+const LabelPrimitive = tslib_1.__importStar(require("@radix-ui/react-label"));
+const utils_1 = require("@/lib/utils");
+function Label(_a) {
+    var { className } = _a, props = tslib_1.__rest(_a, ["className"]);
+    return ((0, jsx_runtime_1.jsx)(LabelPrimitive.Root, Object.assign({ "data-slot": "label", className: (0, utils_1.cn)("flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50", className) }, props)));
+}
 //# sourceMappingURL=label.js.map
