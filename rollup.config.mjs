@@ -5,7 +5,6 @@ import typescript from '@rollup/plugin-typescript';
 import json from '@rollup/plugin-json';
 import replace from '@rollup/plugin-replace';
 import externals from 'rollup-plugin-node-externals';
-import postcss from 'rollup-plugin-postcss';
 import preserveDirectives from 'rollup-plugin-preserve-directives';
 import alias from '@rollup/plugin-alias';
 import dts from 'rollup-plugin-dts';
@@ -84,12 +83,6 @@ export default [
                 outDir: 'dist/esm',
                 declaration: false,
             }),
-            postcss({
-                extract: 'styles.css',
-                modules: false,
-                autoModules: true,
-                minimize: true,
-            }),
         ],
         external,
     },
@@ -110,12 +103,6 @@ export default [
                 outDir: 'dist/cjs',
                 declaration: false,
             }),
-            postcss({
-                inject: false,
-                extract: 'styles.css',
-                modules: false,
-                minimize: true,
-            }),
         ],
         external,
     },
@@ -134,6 +121,7 @@ export default [
                         '@/*': ['src/*'],
                     },
                 },
+                exclude: ['**/*.css'],
             }),
         ],
         external,
