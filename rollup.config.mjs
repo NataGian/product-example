@@ -9,18 +9,17 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
 import preserveDirectives from 'rollup-plugin-preserve-directives';
 import alias from '@rollup/plugin-alias';
+import dts from 'rollup-plugin-dts';
 
 const packageJson = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 
-// Make sure to exclude Next.js specific items
 const external = [
     ...(packageJson.peerDependencies ? Object.keys(packageJson.peerDependencies) : []),
     ...(packageJson.dependencies ? Object.keys(packageJson.dependencies) : []),
     'next/navigation',
     'react/jsx-runtime',
-    // Add these to prevent issues with Next.js
     'next',
     'next/app',
     'next/document',
@@ -29,21 +28,17 @@ const external = [
     'next/link',
 ];
 
-// Create alias configuration based on tsconfig paths
 const aliasEntries = [
-    { find: '@', replacement: path.resolve(process.cwd(), 'src') }
+    {find: '@', replacement: path.resolve(process.cwd(), 'src')}
 ];
 
-// Special handling for Next.js config
 const nextConfigPlugin = () => ({
     name: 'next-config-plugin',
     generateBundle(_, bundle) {
-        // Check if we've generated the Next.js config
         if (bundle['config/next-config.js']) {
-            // Create a copy at the root level for Next.js to find it
             this.emitFile({
                 type: 'asset',
-                fileName: '../next.config.js', // Move up one directory to be at project root
+                fileName: '../next.config.js',
                 source: "module.exports = require('./cjs/config/next-config.js');"
             });
         }
@@ -58,7 +53,6 @@ const basePlugins = () => [
     resolve({
         extensions,
         preferBuiltins: true,
-        // Fix deprecated option
         moduleDirectories: ['node_modules', 'src']
     }),
     commonjs({
@@ -73,8 +67,6 @@ const basePlugins = () => [
     preserveDirectives(),
 ];
 
-// Use a separate directory for the Next.js config TypeScript compilation
-// This fixes the outDir issue
 const buildNextConfig = {
     input: 'next.config.ts',
     output: {
@@ -89,10 +81,10 @@ const buildNextConfig = {
         typescript({
             tsconfig: './tsconfig.json',
             compilerOptions: {
-                module: 'esnext', // Fix module setting
+                module: 'esnext',
                 jsx: 'react-jsx',
                 noEmit: false,
-                outDir: 'dist', // Match the output.dir
+                outDir: 'dist',
                 target: 'ES2017'
             },
             outputToFilesystem: true
@@ -101,11 +93,11 @@ const buildNextConfig = {
     external,
 };
 
-// Configure TypeScript options consistently for all builds
+// Shared TypeScript options without declaration settings
 const sharedTsOptions = {
     tsconfig: './tsconfig.json',
     compilerOptions: {
-        module: 'esnext', // Fix module setting
+        module: 'esnext',
         jsx: 'react-jsx',
         noEmit: false,
         target: 'ES2017'
@@ -118,7 +110,7 @@ const esmPlugins = () => [
     typescript({
         ...sharedTsOptions,
         outDir: 'dist/esm',
-        declaration: false
+        declaration: false // No declaration in ESM build
     }),
     postcss({
         extract: 'styles.css',
@@ -144,26 +136,33 @@ const cjsPlugins = () => [
     nextConfigPlugin()
 ];
 
-const typesPlugins = () => [
-    ...basePlugins(),
-    typescript({
-        ...sharedTsOptions,
-        outDir: 'dist/types',
-        declaration: true,
-        emitDeclarationOnly: true
-    }),
-];
-
-// Main library input files (excluding next.config.ts)
 const inputFiles = {
     index: 'src/index.ts',
 };
 
-// Export as default for ES modules
+// Use rollup-plugin-dts for generating declarations
+const typesBundle = {
+    input: 'src/index.ts',
+    output: {
+        file: 'dist/index.d.ts',
+        format: 'es'
+    },
+    plugins: [
+        dts({
+            tsconfig: './tsconfig.json',
+            compilerOptions: {
+                baseUrl: '.',
+                paths: {
+                    '@/*': ['src/*']
+                }
+            }
+        })
+    ],
+    external
+};
+
 export default [
-    // Build the Next.js config separately
     buildNextConfig,
-    // Build the library
     {
         input: inputFiles,
         output: {
@@ -189,16 +188,7 @@ export default [
         plugins: cjsPlugins(),
         external,
     },
-    {
-        input: inputFiles,
-        output: {
-            dir: 'dist/types',
-            format: 'esm',
-            sourcemap: true,
-            preserveModules: true,
-            preserveModulesRoot: 'src',
-        },
-        plugins: typesPlugins(),
-        external,
-    },
+    // Removed the problematic types build
+    // Instead, rely solely on rollup-plugin-dts
+    typesBundle
 ];
