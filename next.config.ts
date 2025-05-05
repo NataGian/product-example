@@ -1,14 +1,6 @@
 import type {NextConfig} from "next";
 
-const productPathConfig: NextConfig = {
-    webpack: (config) => {
-        config.resolve.alias = {
-            ...config.resolve.alias,
-            '@/lib': './lib',
-            '@/components': './components'
-        };
-        return config;
-    },
+const nextConfig: NextConfig = {
     async redirects() {
         return [
             {
@@ -20,4 +12,4 @@ const productPathConfig: NextConfig = {
     },
 };
 
-export default productPathConfig;
+export default nextConfig;

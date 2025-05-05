@@ -1,23 +1,18 @@
-import fs from 'fs';
 import path from 'path';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 import json from '@rollup/plugin-json';
 import replace from '@rollup/plugin-replace';
-import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import externals from 'rollup-plugin-node-externals';
 import postcss from 'rollup-plugin-postcss';
 import preserveDirectives from 'rollup-plugin-preserve-directives';
 import alias from '@rollup/plugin-alias';
 import dts from 'rollup-plugin-dts';
 
-const packageJson = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
-
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 
 const external = [
-    ...(packageJson.peerDependencies ? Object.keys(packageJson.peerDependencies) : []),
-    ...(packageJson.dependencies ? Object.keys(packageJson.dependencies) : []),
     'next/navigation',
     'react/jsx-runtime',
     'next',
@@ -34,7 +29,12 @@ const aliasEntries = [
 
 const basePlugins = () => [
     alias({entries: aliasEntries}),
-    peerDepsExternal(),
+    externals({
+        deps: true,
+        peerDeps: true,
+        devDeps: false,
+        optDeps: false,
+    }),
     resolve({
         extensions,
         preferBuiltins: true,
@@ -68,22 +68,6 @@ const inputFiles = {
 };
 
 export default [
-    {
-        input: 'next.config.ts',
-        output: {
-            file: 'dist/next.config.js',
-            format: 'cjs',
-            exports: 'auto',
-        },
-        plugins: [
-            ...basePlugins(),
-            typescript({
-                ...sharedTsOptions,
-                outDir: 'dist',
-            }),
-        ],
-        external,
-    },
     {
         input: inputFiles,
         output: {
