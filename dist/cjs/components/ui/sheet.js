@@ -1,7 +1,7 @@
 "use client";
 'use strict';
 
-var tslib_es6_js = require('C:\\Users\\NataliaGIANNOULI\\IdeaProjects\\product-example\\node_modules\\tslib\\tslib.es6.js');
+var tslib_es6 = require('../../node_modules/tslib/tslib.es6.js');
 var jsxRuntime = require('react/jsx-runtime');
 var SheetPrimitive = require('@radix-ui/react-dialog');
 var lucideReact = require('lucide-react');
@@ -27,27 +27,27 @@ function _interopNamespaceDefault(e) {
 var SheetPrimitive__namespace = /*#__PURE__*/_interopNamespaceDefault(SheetPrimitive);
 
 function Sheet(_a) {
-    var props = tslib_es6_js.__rest(_a, []);
+    var props = tslib_es6.__rest(_a, []);
     return jsxRuntime.jsx(SheetPrimitive__namespace.Root, Object.assign({ "data-slot": "sheet" }, props));
 }
 function SheetTrigger(_a) {
-    var props = tslib_es6_js.__rest(_a, []);
+    var props = tslib_es6.__rest(_a, []);
     return jsxRuntime.jsx(SheetPrimitive__namespace.Trigger, Object.assign({ "data-slot": "sheet-trigger" }, props));
 }
 function SheetClose(_a) {
-    var props = tslib_es6_js.__rest(_a, []);
+    var props = tslib_es6.__rest(_a, []);
     return jsxRuntime.jsx(SheetPrimitive__namespace.Close, Object.assign({ "data-slot": "sheet-close" }, props));
 }
 function SheetPortal(_a) {
-    var props = tslib_es6_js.__rest(_a, []);
+    var props = tslib_es6.__rest(_a, []);
     return jsxRuntime.jsx(SheetPrimitive__namespace.Portal, Object.assign({ "data-slot": "sheet-portal" }, props));
 }
 function SheetOverlay(_a) {
-    var { className } = _a, props = tslib_es6_js.__rest(_a, ["className"]);
+    var { className } = _a, props = tslib_es6.__rest(_a, ["className"]);
     return (jsxRuntime.jsx(SheetPrimitive__namespace.Overlay, Object.assign({ "data-slot": "sheet-overlay", className: utils.cn("data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/50", className) }, props)));
 }
 function SheetContent(_a) {
-    var { className, children, side = "right" } = _a, props = tslib_es6_js.__rest(_a, ["className", "children", "side"]);
+    var { className, children, side = "right" } = _a, props = tslib_es6.__rest(_a, ["className", "children", "side"]);
     return (jsxRuntime.jsxs(SheetPortal, { children: [jsxRuntime.jsx(SheetOverlay, {}), jsxRuntime.jsxs(SheetPrimitive__namespace.Content, Object.assign({ "data-slot": "sheet-content", className: utils.cn("bg-background data-[state=open]:animate-in data-[state=closed]:animate-out fixed z-50 flex flex-col gap-4 shadow-lg transition ease-in-out data-[state=closed]:duration-300 data-[state=open]:duration-500", side === "right" &&
                     "data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right inset-y-0 right-0 h-full w-3/4 border-l sm:max-w-sm", side === "left" &&
                     "data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left inset-y-0 left-0 h-full w-3/4 border-r sm:max-w-sm", side === "top" &&
@@ -55,19 +55,19 @@ function SheetContent(_a) {
                     "data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom inset-x-0 bottom-0 h-auto border-t", className) }, props, { children: [children, jsxRuntime.jsxs(SheetPrimitive__namespace.Close, { className: "ring-offset-background focus:ring-ring data-[state=open]:bg-secondary absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none", children: [jsxRuntime.jsx(lucideReact.XIcon, { className: "size-4" }), jsxRuntime.jsx("span", { className: "sr-only", children: "Close" })] })] }))] }));
 }
 function SheetHeader(_a) {
-    var { className } = _a, props = tslib_es6_js.__rest(_a, ["className"]);
+    var { className } = _a, props = tslib_es6.__rest(_a, ["className"]);
     return (jsxRuntime.jsx("div", Object.assign({ "data-slot": "sheet-header", className: utils.cn("flex flex-col gap-1.5 p-4", className) }, props)));
 }
 function SheetFooter(_a) {
-    var { className } = _a, props = tslib_es6_js.__rest(_a, ["className"]);
+    var { className } = _a, props = tslib_es6.__rest(_a, ["className"]);
     return (jsxRuntime.jsx("div", Object.assign({ "data-slot": "sheet-footer", className: utils.cn("mt-auto flex flex-col gap-2 p-4", className) }, props)));
 }
 function SheetTitle(_a) {
-    var { className } = _a, props = tslib_es6_js.__rest(_a, ["className"]);
+    var { className } = _a, props = tslib_es6.__rest(_a, ["className"]);
     return (jsxRuntime.jsx(SheetPrimitive__namespace.Title, Object.assign({ "data-slot": "sheet-title", className: utils.cn("text-foreground font-semibold", className) }, props)));
 }
 function SheetDescription(_a) {
-    var { className } = _a, props = tslib_es6_js.__rest(_a, ["className"]);
+    var { className } = _a, props = tslib_es6.__rest(_a, ["className"]);
     return (jsxRuntime.jsx(SheetPrimitive__namespace.Description, Object.assign({ "data-slot": "sheet-description", className: utils.cn("text-muted-foreground text-sm", className) }, props)));
 }
 

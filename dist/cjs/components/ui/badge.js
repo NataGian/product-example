@@ -1,6 +1,6 @@
 'use strict';
 
-var tslib_es6_js = require('C:\\Users\\NataliaGIANNOULI\\IdeaProjects\\product-example\\node_modules\\tslib\\tslib.es6.js');
+var tslib_es6 = require('../../node_modules/tslib/tslib.es6.js');
 var jsxRuntime = require('react/jsx-runtime');
 var reactSlot = require('@radix-ui/react-slot');
 var classVarianceAuthority = require('class-variance-authority');
@@ -20,7 +20,7 @@ const badgeVariants = classVarianceAuthority.cva("inline-flex items-center justi
     },
 });
 function Badge(_a) {
-    var { className, variant, asChild = false } = _a, props = tslib_es6_js.__rest(_a, ["className", "variant", "asChild"]);
+    var { className, variant, asChild = false } = _a, props = tslib_es6.__rest(_a, ["className", "variant", "asChild"]);
     const Comp = asChild ? reactSlot.Slot : "span";
     return (jsxRuntime.jsx(Comp, Object.assign({ "data-slot": "badge", className: utils.cn(badgeVariants({ variant }), className) }, props)));
 }

@@ -1,6 +1,6 @@
 'use strict';
 
-var tslib_es6_js = require('C:\\Users\\NataliaGIANNOULI\\IdeaProjects\\product-example\\node_modules\\tslib\\tslib.es6.js');
+var tslib_es6 = require('../../node_modules/tslib/tslib.es6.js');
 var jsxRuntime = require('react/jsx-runtime');
 var reactSlot = require('@radix-ui/react-slot');
 var classVarianceAuthority = require('class-variance-authority');
@@ -29,7 +29,7 @@ const buttonVariants = classVarianceAuthority.cva("inline-flex items-center just
     },
 });
 function Button(_a) {
-    var { className, variant, size, asChild = false } = _a, props = tslib_es6_js.__rest(_a, ["className", "variant", "size", "asChild"]);
+    var { className, variant, size, asChild = false } = _a, props = tslib_es6.__rest(_a, ["className", "variant", "size", "asChild"]);
     const Comp = asChild ? reactSlot.Slot : "button";
     return (jsxRuntime.jsx(Comp, Object.assign({ "data-slot": "button", className: utils.cn(buttonVariants({ variant, size, className })) }, props)));
 }

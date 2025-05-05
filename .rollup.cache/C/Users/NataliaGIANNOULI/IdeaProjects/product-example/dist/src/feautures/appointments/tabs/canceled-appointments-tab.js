@@ -1,0 +1,6 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, TabsContent } from "@/components";
+export function CanceledAppointmentsTab() {
+    return (_jsx(TabsContent, { value: "canceled", children: _jsxs(Card, { children: [_jsxs(CardHeader, { children: [_jsx(CardTitle, { children: "\u0391\u03BA\u03C5\u03C1\u03C9\u03BC\u03AD\u03BD\u03B1 \u03A1\u03B1\u03BD\u03C4\u03B5\u03B2\u03BF\u03CD" }), _jsx(CardDescription, { children: "\u03A1\u03B1\u03BD\u03C4\u03B5\u03B2\u03BF\u03CD \u03C0\u03BF\u03C5 \u03AD\u03C7\u03BF\u03C5\u03BD \u03B1\u03BA\u03C5\u03C1\u03C9\u03B8\u03B5\u03AF" })] }), _jsx(CardContent, { className: "h-64 flex items-center justify-center", children: _jsx("p", { className: "text-gray-500", children: "\u03A4\u03B1 \u03B1\u03BA\u03C5\u03C1\u03C9\u03BC\u03AD\u03BD\u03B1 \u03C1\u03B1\u03BD\u03C4\u03B5\u03B2\u03BF\u03CD \u03B8\u03B1 \u03B5\u03BC\u03C6\u03B1\u03BD\u03AF\u03B6\u03BF\u03BD\u03C4\u03B1\u03B9 \u03B5\u03B4\u03CE" }) })] }) }));
+}
+//# sourceMappingURL=canceled-appointments-tab.js.map

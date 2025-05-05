@@ -1,5 +1,5 @@
 "use client";
-import { __rest } from 'C:\\Users\\NataliaGIANNOULI\\IdeaProjects\\product-example\\node_modules\\tslib\\tslib.es6.js';
+import { __rest } from '../../node_modules/tslib/tslib.es6.js';
 import { jsx, jsxs } from 'react/jsx-runtime';
 import * as SheetPrimitive from '@radix-ui/react-dialog';
 import { XIcon } from 'lucide-react';

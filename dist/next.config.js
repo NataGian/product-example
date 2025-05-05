@@ -1,0 +1,20 @@
+'use strict';
+
+const productPathConfig = {
+    webpack: (config) => {
+        config.resolve.alias = Object.assign(Object.assign({}, config.resolve.alias), { '@/lib': './lib', '@/components': './components' });
+        return config;
+    },
+    async redirects() {
+        return [
+            {
+                source: '/',
+                destination: '/dashboard',
+                permanent: true,
+            },
+        ];
+    },
+};
+
+module.exports = productPathConfig;
+//# sourceMappingURL=next.config.js.map
