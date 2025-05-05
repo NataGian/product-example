@@ -14,7 +14,7 @@
       "require": "./dist/cjs/index.js",
       "types": "./dist/index.d.ts"
     },
-    "./styles.css": "./src/styles/globals.css"
+    "./styles/globals.css": "./src/styles/globals.css"
   },
   "sideEffects": [
     "**/*.css"
@@ -23,11 +23,11 @@
     "dev": "next dev",
     "build:lib": "tsc -p tsconfig.build.json && tsc -p tsconfig.build.cjs.json",
     "build": "npm run build:lib && next build",
+    "build:package": "npm run clean && rollup -c",
     "start": "next start",
     "lint": "next lint",
     "prepublishOnly": "npm run build:package",
-    "clean": "rimraf dist",
-    "build:package": "npm run clean && rollup -c"
+    "clean": "rimraf dist"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.5",
