@@ -19,8 +19,9 @@
       "default": "./dist/esm/styles.css"
     },
     "./config/next-config": {
-      "import": "./next.config.ts",
-      "require": "./next.config.ts"
+      "import": "./dist/esm/next.config.js",
+      "require": "./dist/cjs/next.config.js",
+      "types": "./dist/types/next.config.d.ts"
     }
   },
   "sideEffects": [

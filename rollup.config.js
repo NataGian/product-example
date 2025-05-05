@@ -75,9 +75,14 @@ const typesPlugins = () => [
     }),
 ];
 
+const inputFiles = {
+    index: 'src/index.ts',
+    'config/next-config': 'next.config.ts',
+};
+
 export default [
     {
-        input: 'src/index.ts',
+        input: inputFiles,
         output: {
             dir: 'dist/esm',
             format: 'esm',
@@ -89,7 +94,7 @@ export default [
         external,
     },
     {
-        input: 'src/index.ts',
+        input: inputFiles,
         output: {
             dir: 'dist/cjs',
             format: 'cjs',
@@ -102,7 +107,7 @@ export default [
         external,
     },
     {
-        input: 'src/index.ts',
+        input: inputFiles,
         output: {
             dir: 'dist/types',
             format: 'esm',
