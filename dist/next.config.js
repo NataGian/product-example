@@ -17,4 +17,3 @@ const productPathConfig = {
 };
 
 module.exports = productPathConfig;
-//# sourceMappingURL=next.config.js.map
