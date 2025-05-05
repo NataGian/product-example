@@ -1,7 +1,10 @@
-import { usePathname } from "next/navigation";
-export const useCurrentSidebarItem = (sidebarItems) => {
+import { usePathname } from 'next/navigation';
+
+const useCurrentSidebarItem = (sidebarItems) => {
     const pathname = usePathname();
     return sidebarItems.find(item => pathname.startsWith(item.href));
 };
-export const NavigationClientOnly = 'use client';
+const NavigationClientOnly = 'use client';
+
+export { NavigationClientOnly, useCurrentSidebarItem };
 //# sourceMappingURL=navigation.js.map

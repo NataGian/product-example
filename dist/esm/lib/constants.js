@@ -1,5 +1,6 @@
-import { BookOpen, ClipboardPaste, Settings } from "lucide-react";
-export const APP_ROUTES = {
+import { ClipboardPaste, BookOpen, Settings } from 'lucide-react';
+
+const APP_ROUTES = {
     DASHBOARD: {
         BASE_PAGE: '/dashboard',
     },
@@ -10,7 +11,7 @@ export const APP_ROUTES = {
         BASE_PAGE: '/settings',
     },
 };
-export const appSidebarItems = [
+const appSidebarItems = [
     {
         title: "Πίνακας Ελέγχου",
         href: APP_ROUTES.DASHBOARD.BASE_PAGE,
@@ -27,4 +28,6 @@ export const appSidebarItems = [
         icon: Settings,
     },
 ];
+
+export { APP_ROUTES, appSidebarItems };
 //# sourceMappingURL=constants.js.map

@@ -17,6 +17,10 @@
     },
     "./styles.css": {
       "default": "./dist/esm/styles.css"
+    },
+    "./config/next-config": {
+      "import": "./dist/config/next-config.js",
+      "require": "./dist/config/next-config.js"
     }
   },
   "sideEffects": [

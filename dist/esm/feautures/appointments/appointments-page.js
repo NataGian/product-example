@@ -1,9 +1,0 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { Button, Tabs, TabsList, TabsTrigger } from "@/components";
-import { UpcomingAppointmentsTab } from "@/feautures/appointments/tabs/upcoming-appointments-tab";
-import { PastAppointmentsTab } from "@/feautures/appointments/tabs/past-appointments-tab";
-import { CanceledAppointmentsTab } from "@/feautures/appointments/tabs/canceled-appointments-tab";
-export const AppointmentsPage = () => {
-    return (_jsxs("div", { className: "pl-0 pr-6 space-y-6", children: [_jsxs("div", { className: "flex justify-between items-center", children: [_jsxs("div", { children: [_jsx("h1", { className: "text-3xl font-bold", children: "\u03A1\u03B1\u03BD\u03C4\u03B5\u03B2\u03BF\u03CD" }), _jsx("p", { className: "text-gray-500", children: "\u0394\u03B9\u03B1\u03C7\u03B5\u03AF\u03C1\u03B9\u03C3\u03B7 \u03C4\u03C9\u03BD \u03C1\u03B1\u03BD\u03C4\u03B5\u03B2\u03BF\u03CD \u03C3\u03B1\u03C2" })] }), _jsx(Button, { children: "+ \u039D\u03AD\u03BF \u03A1\u03B1\u03BD\u03C4\u03B5\u03B2\u03BF\u03CD" })] }), _jsxs(Tabs, { defaultValue: "upcoming", className: "w-full", children: [_jsxs(TabsList, { className: "mb-4", children: [_jsx(TabsTrigger, { value: "upcoming", children: "\u0395\u03C0\u03B5\u03C1\u03C7\u03CC\u03BC\u03B5\u03BD\u03B1" }), _jsx(TabsTrigger, { value: "past", children: "\u03A0\u03B1\u03C1\u03B5\u03BB\u03B8\u03CC\u03BD\u03C4\u03B1" }), _jsx(TabsTrigger, { value: "canceled", children: "\u0391\u03BA\u03C5\u03C1\u03C9\u03BC\u03AD\u03BD\u03B1" })] }), _jsx(UpcomingAppointmentsTab, {}), _jsx(PastAppointmentsTab, {}), _jsx(CanceledAppointmentsTab, {})] })] }));
-};
-//# sourceMappingURL=appointments-page.js.map

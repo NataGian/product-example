@@ -6,9 +6,9 @@ export type SidebarItem = {
     href: string;
 };
 export interface PageOptions {
-    [key: string]: any;
+    [key: string]: unknown;
 }
-export interface PageDefinition {
-    component: ComponentType<any>;
+export interface PageDefinition<P = unknown> {
+    component: ComponentType<P>;
     options: PageOptions;
 }

@@ -1,20 +1,22 @@
-"use strict";
-'use client';
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppSidebar = AppSidebar;
-const jsx_runtime_1 = require("react/jsx-runtime");
-const sidebar_1 = require("@/components/ui/sidebar");
-const navigation_1 = require("next/navigation");
-const clsx_1 = require("clsx");
-const constants_1 = require("@/lib/constants");
+"use client";
+'use strict';
+
+var jsxRuntime = require('react/jsx-runtime');
+var sidebar = require('../../ui/sidebar.js');
+var navigation = require('next/navigation');
+var clsx = require('clsx');
+var constants = require('../../../lib/constants.js');
+
 function AppSidebar() {
-    const pathname = (0, navigation_1.usePathname)();
-    return ((0, jsx_runtime_1.jsx)(sidebar_1.Sidebar, { children: (0, jsx_runtime_1.jsx)(sidebar_1.SidebarContent, { children: (0, jsx_runtime_1.jsx)(sidebar_1.SidebarGroup, { children: (0, jsx_runtime_1.jsx)(sidebar_1.SidebarGroupContent, { className: "mt-2", children: (0, jsx_runtime_1.jsx)(sidebar_1.SidebarMenu, { children: constants_1.appSidebarItems.map((item) => {
+    const pathname = navigation.usePathname();
+    return (jsxRuntime.jsx(sidebar.Sidebar, { children: jsxRuntime.jsx(sidebar.SidebarContent, { children: jsxRuntime.jsx(sidebar.SidebarGroup, { children: jsxRuntime.jsx(sidebar.SidebarGroupContent, { className: "mt-2", children: jsxRuntime.jsx(sidebar.SidebarMenu, { children: constants.appSidebarItems.map((item) => {
                             const isActive = pathname.startsWith(item.href);
-                            return ((0, jsx_runtime_1.jsx)(sidebar_1.SidebarMenuItem, { className: "mb-2", children: (0, jsx_runtime_1.jsx)(sidebar_1.SidebarMenuButton, { asChild: true, children: (0, jsx_runtime_1.jsxs)("a", { href: item.href, className: (0, clsx_1.clsx)("flex items-center gap-2 px-3 py-2 rounded-md", {
+                            return (jsxRuntime.jsx(sidebar.SidebarMenuItem, { className: "mb-2", children: jsxRuntime.jsx(sidebar.SidebarMenuButton, { asChild: true, children: jsxRuntime.jsxs("a", { href: item.href, className: clsx.clsx("flex items-center gap-2 px-3 py-2 rounded-md", {
                                             "bg-muted text-primary font-medium": isActive,
                                             "text-primary-foreground hover:bg-accent": !isActive,
-                                        }), children: [(0, jsx_runtime_1.jsx)(item.icon, {}), (0, jsx_runtime_1.jsx)("span", { children: item.title })] }) }) }, item.title));
+                                        }), children: [jsxRuntime.jsx(item.icon, {}), jsxRuntime.jsx("span", { children: item.title })] }) }) }, item.title));
                         }) }) }) }) }) }));
 }
+
+exports.AppSidebar = AppSidebar;
 //# sourceMappingURL=app-sidebar.js.map

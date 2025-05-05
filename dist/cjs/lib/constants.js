@@ -1,8 +1,8 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.appSidebarItems = exports.APP_ROUTES = void 0;
-const lucide_react_1 = require("lucide-react");
-exports.APP_ROUTES = {
+'use strict';
+
+var lucideReact = require('lucide-react');
+
+const APP_ROUTES = {
     DASHBOARD: {
         BASE_PAGE: '/dashboard',
     },
@@ -13,21 +13,24 @@ exports.APP_ROUTES = {
         BASE_PAGE: '/settings',
     },
 };
-exports.appSidebarItems = [
+const appSidebarItems = [
     {
         title: "Πίνακας Ελέγχου",
-        href: exports.APP_ROUTES.DASHBOARD.BASE_PAGE,
-        icon: lucide_react_1.ClipboardPaste,
+        href: APP_ROUTES.DASHBOARD.BASE_PAGE,
+        icon: lucideReact.ClipboardPaste,
     },
     {
         title: "Ραντεβού",
-        href: exports.APP_ROUTES.APPOINTMENTS.BASE_PAGE,
-        icon: lucide_react_1.BookOpen,
+        href: APP_ROUTES.APPOINTMENTS.BASE_PAGE,
+        icon: lucideReact.BookOpen,
     },
     {
         title: "Ρυθμίσεις",
-        href: exports.APP_ROUTES.SETTINGS.BASE_PAGE,
-        icon: lucide_react_1.Settings,
+        href: APP_ROUTES.SETTINGS.BASE_PAGE,
+        icon: lucideReact.Settings,
     },
 ];
+
+exports.APP_ROUTES = APP_ROUTES;
+exports.appSidebarItems = appSidebarItems;
 //# sourceMappingURL=constants.js.map

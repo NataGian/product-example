@@ -1,13 +1,12 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.buttonVariants = void 0;
-exports.Button = Button;
-const tslib_1 = require("tslib");
-const jsx_runtime_1 = require("react/jsx-runtime");
-const react_slot_1 = require("@radix-ui/react-slot");
-const class_variance_authority_1 = require("class-variance-authority");
-const utils_1 = require("@/lib/utils");
-const buttonVariants = (0, class_variance_authority_1.cva)("inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive", {
+'use strict';
+
+var tslib_es6_js = require('C:\\Users\\NataliaGIANNOULI\\IdeaProjects\\product-example\\node_modules\\tslib\\tslib.es6.js');
+var jsxRuntime = require('react/jsx-runtime');
+var reactSlot = require('@radix-ui/react-slot');
+var classVarianceAuthority = require('class-variance-authority');
+var utils = require('../../lib/utils.js');
+
+const buttonVariants = classVarianceAuthority.cva("inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive", {
     variants: {
         variant: {
             default: "bg-primary text-primary-foreground shadow-xs hover:bg-primary/90",
@@ -29,10 +28,12 @@ const buttonVariants = (0, class_variance_authority_1.cva)("inline-flex items-ce
         size: "default",
     },
 });
-exports.buttonVariants = buttonVariants;
 function Button(_a) {
-    var { className, variant, size, asChild = false } = _a, props = tslib_1.__rest(_a, ["className", "variant", "size", "asChild"]);
-    const Comp = asChild ? react_slot_1.Slot : "button";
-    return ((0, jsx_runtime_1.jsx)(Comp, Object.assign({ "data-slot": "button", className: (0, utils_1.cn)(buttonVariants({ variant, size, className })) }, props)));
+    var { className, variant, size, asChild = false } = _a, props = tslib_es6_js.__rest(_a, ["className", "variant", "size", "asChild"]);
+    const Comp = asChild ? reactSlot.Slot : "button";
+    return (jsxRuntime.jsx(Comp, Object.assign({ "data-slot": "button", className: utils.cn(buttonVariants({ variant, size, className })) }, props)));
 }
+
+exports.Button = Button;
+exports.buttonVariants = buttonVariants;
 //# sourceMappingURL=button.js.map
