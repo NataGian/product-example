@@ -63,7 +63,7 @@ declare function AvatarImage({ className, ...props }: React$1.ComponentProps<typ
 declare function AvatarFallback({ className, ...props }: React$1.ComponentProps<typeof AvatarPrimitive.Fallback>): React$1.JSX.Element;
 
 declare const badgeVariants: (props?: ({
-    variant?: "default" | "secondary" | "destructive" | "outline" | null | undefined;
+    variant?: "default" | "destructive" | "outline" | "secondary" | null | undefined;
 } & class_variance_authority_dist_types.ClassProp) | undefined) => string;
 declare function Badge({ className, variant, asChild, ...props }: React$1.ComponentProps<"span"> & VariantProps<typeof badgeVariants> & {
     asChild?: boolean;
@@ -80,7 +80,7 @@ declare function BreadcrumbSeparator({ children, className, ...props }: React$1.
 declare function BreadcrumbEllipsis({ className, ...props }: React$1.ComponentProps<"span">): React$1.JSX.Element;
 
 declare const buttonVariants: (props?: ({
-    variant?: "default" | "secondary" | "destructive" | "outline" | "ghost" | "link" | null | undefined;
+    variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link" | null | undefined;
     size?: "default" | "sm" | "lg" | "icon" | null | undefined;
 } & class_variance_authority_dist_types.ClassProp) | undefined) => string;
 declare function Button({ className, variant, size, asChild, ...props }: React$1.ComponentProps<"button"> & VariantProps<typeof buttonVariants> & {
@@ -213,5 +213,11 @@ declare function AppLayoutTop(): React$1.JSX.Element;
 
 declare function AppSidebar(): React$1.JSX.Element;
 
-export { APP_ROUTES, AppLayout, AppLayoutTop, AppSidebar, Avatar, AvatarFallback, AvatarImage, Badge, Breadcrumb, BreadcrumbEllipsis, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator, Button, Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, Input, Label, NavigationClientOnly, PageRegistry, Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectScrollDownButton, SelectScrollUpButton, SelectSeparator, SelectTrigger, SelectValue, Separator, Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger, Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupAction, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarInput, SidebarInset, SidebarMenu, SidebarMenuAction, SidebarMenuBadge, SidebarMenuButton, SidebarMenuItem, SidebarMenuSkeleton, SidebarMenuSub, SidebarMenuSubButton, SidebarMenuSubItem, SidebarProvider, SidebarRail, SidebarSeparator, SidebarTrigger, Skeleton, Tabs, TabsContent, TabsList, TabsTrigger, Textarea, appSidebarItems, badgeVariants, buttonVariants, cn, createRegistry, useCurrentSidebarItem, useIsMobile, useSidebar };
+declare const AppointmentsPage: () => React$1.JSX.Element;
+
+declare const DashboardPage: () => React$1.JSX.Element;
+
+declare const SettingsPage: () => React$1.JSX.Element;
+
+export { APP_ROUTES, AppLayout, AppLayoutTop, AppSidebar, AppointmentsPage, Avatar, AvatarFallback, AvatarImage, Badge, Breadcrumb, BreadcrumbEllipsis, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator, Button, Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, DashboardPage, Input, Label, NavigationClientOnly, PageRegistry, Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectScrollDownButton, SelectScrollUpButton, SelectSeparator, SelectTrigger, SelectValue, Separator, SettingsPage, Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger, Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupAction, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarInput, SidebarInset, SidebarMenu, SidebarMenuAction, SidebarMenuBadge, SidebarMenuButton, SidebarMenuItem, SidebarMenuSkeleton, SidebarMenuSub, SidebarMenuSubButton, SidebarMenuSubItem, SidebarProvider, SidebarRail, SidebarSeparator, SidebarTrigger, Skeleton, Tabs, TabsContent, TabsList, TabsTrigger, Textarea, appSidebarItems, badgeVariants, buttonVariants, cn, createRegistry, useCurrentSidebarItem, useIsMobile, useSidebar };
 export type { PageDefinition, PageOptions, SidebarItem };

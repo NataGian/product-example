@@ -22,6 +22,9 @@ var textarea = require('./components/ui/textarea.js');
 var appLayout = require('./components/custom/layout/app-layout.js');
 var appLayoutTop = require('./components/custom/layout/app-layout-top.js');
 var appSidebar = require('./components/custom/layout/app-sidebar.js');
+var appointmentsPage = require('./feautures/appointments/appointments-page.js');
+var dashboardPage = require('./feautures/dashboard/dashboard-page.js');
+var settingsPage = require('./feautures/settings/settings-page.js');
 
 
 
@@ -108,4 +111,7 @@ exports.Textarea = textarea.Textarea;
 exports.AppLayout = appLayout.AppLayout;
 exports.AppLayoutTop = appLayoutTop.AppLayoutTop;
 exports.AppSidebar = appSidebar.AppSidebar;
+exports.AppointmentsPage = appointmentsPage.AppointmentsPage;
+exports.DashboardPage = dashboardPage.DashboardPage;
+exports.SettingsPage = settingsPage.SettingsPage;
 //# sourceMappingURL=index.js.map

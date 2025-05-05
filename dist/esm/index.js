@@ -20,4 +20,7 @@ export { Textarea } from './components/ui/textarea.js';
 export { AppLayout } from './components/custom/layout/app-layout.js';
 export { AppLayoutTop } from './components/custom/layout/app-layout-top.js';
 export { AppSidebar } from './components/custom/layout/app-sidebar.js';
+export { AppointmentsPage } from './feautures/appointments/appointments-page.js';
+export { DashboardPage } from './feautures/dashboard/dashboard-page.js';
+export { SettingsPage } from './feautures/settings/settings-page.js';
 //# sourceMappingURL=index.js.map
