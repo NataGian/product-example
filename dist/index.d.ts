@@ -63,7 +63,7 @@ declare function AvatarImage({ className, ...props }: React$1.ComponentProps<typ
 declare function AvatarFallback({ className, ...props }: React$1.ComponentProps<typeof AvatarPrimitive.Fallback>): React$1.JSX.Element;
 
 declare const badgeVariants: (props?: ({
-    variant?: "default" | "destructive" | "outline" | "secondary" | null | undefined;
+    variant?: "default" | "secondary" | "destructive" | "outline" | null | undefined;
 } & class_variance_authority_dist_types.ClassProp) | undefined) => string;
 declare function Badge({ className, variant, asChild, ...props }: React$1.ComponentProps<"span"> & VariantProps<typeof badgeVariants> & {
     asChild?: boolean;
@@ -80,7 +80,7 @@ declare function BreadcrumbSeparator({ children, className, ...props }: React$1.
 declare function BreadcrumbEllipsis({ className, ...props }: React$1.ComponentProps<"span">): React$1.JSX.Element;
 
 declare const buttonVariants: (props?: ({
-    variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link" | null | undefined;
+    variant?: "default" | "secondary" | "destructive" | "outline" | "ghost" | "link" | null | undefined;
     size?: "default" | "sm" | "lg" | "icon" | null | undefined;
 } & class_variance_authority_dist_types.ClassProp) | undefined) => string;
 declare function Button({ className, variant, size, asChild, ...props }: React$1.ComponentProps<"button"> & VariantProps<typeof buttonVariants> & {
